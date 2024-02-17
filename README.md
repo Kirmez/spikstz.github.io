@@ -7,5 +7,5 @@
 - npm install -g gulp
 - npm install --save-dev gulp gulp-sass gulp-uglify gulp-cli
 
-
+2. Включить live server
 3. Вводим npm run start

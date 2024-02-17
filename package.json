@@ -12,12 +12,13 @@
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "open": "^10.0.3",
     "sass": "^1.70.0"
   },
   "dependencies": {
-    "gulp-cli": "^2.3.0"
+    "nouislider": "^15.7.1"
   }
 }
