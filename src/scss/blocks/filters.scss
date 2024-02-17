@@ -35,9 +35,10 @@
 
 .filters__wrapper {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: 95%;
   align-items: center;
+  padding-right: 30px;
 }
 
 .filters__ranges {
@@ -62,6 +63,7 @@
 
 .filters {
   margin-top: 15px;
+  padding-right: 10px;
 }
 
 .filters__text {
@@ -90,11 +92,12 @@
 
   background-color: #212129;
   border-radius: 3px;
-  padding: 5px;
+  padding: 2px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #959595;
+  text-align: center;
 }
 
 .filters__range-header {
@@ -116,7 +119,7 @@
 
   background-color: #212129;
   border-radius: 3px;
-  padding: 5px;
+  padding: 2px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,6 +235,8 @@
   opacity: 0;
 
   transition: all 0.3s ease;
+
+  box-shadow: 0 10px 25px rgba(15, 15, 23, 0.63);
 }
 
 .filters__choice {

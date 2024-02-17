@@ -37,3 +37,10 @@ body {
   background-color: #171722;
   margin: auto 37px auto 20px;
 }
+
+.main {
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

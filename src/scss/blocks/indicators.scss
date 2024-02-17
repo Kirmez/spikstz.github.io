@@ -1,0 +1,171 @@
+.indicators {
+  display: flex;
+
+  margin-top: 20px;
+}
+
+.indicators__container {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.indicators__indicators-btn {
+  display: flex;
+  align-items: center;
+  background-color: #2a711a;
+  border-radius: 20px;
+  padding: 5px 8px;
+
+  gap: 3px;
+}
+
+.indicators__cross-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicators__indicator {
+  color: #fff;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.indicators__num {
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+}
+
+.indicators__svg {
+  cursor: pointer;
+}
+
+.indicators__block-grad {
+  border-radius: 10px;
+  background: #6bab2b;
+  padding: 1px;
+
+  position: relative;
+
+  margin-top: 30px;
+}
+
+.indicators__blocks {
+  background-color: #353542;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+
+  padding: 15px 22px 30px 17px;
+
+  gap: 15px;
+}
+
+.indicators__block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.indicators__img {
+  position: absolute;
+  left: 0;
+  bottom: 260px;
+}
+
+.indicators__label-block {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.indicators__label {
+  z-index: 2;
+  font-size: 16px;
+  line-height: 147%;
+  color: #959595;
+  text-transform: capitalize;
+}
+
+.indicators__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.indicatos__class {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.indicators__label.checked {
+  color: #fff;
+}
+
+.indicators__checkbox input {
+  display: none;
+}
+
+.indicators__checkbox label {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  line-height: 24px;
+  color: #959595;
+}
+
+.indicators__checkbox label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border: 2px solid #959595;
+  border-radius: 2px;
+}
+
+.indicators__checkbox input:checked + label:before {
+  background-color: #84d52c;
+  border-color: #84d52c;
+}
+
+.indicators__checkbox input:checked + label:after {
+  content: "";
+  position: absolute;
+  background-image: url(/img/check.png);
+  background-repeat: no-repeat;
+  left: 1.5px;
+
+  width: 100%;
+  height: 100%;
+  top: 8px;
+}
+
+.indicators__arrow {
+  cursor: pointer;
+}
+
+.indicators__label-block.active {
+  display: none;
+}
+
+.indicators__arrow.active {
+  transform: rotate(180deg);
+}
+
+.indicators__img.active {
+  display: none;
+}
+.indicators__input:checked + .indicators__label {
+  color: #fff;
+}
