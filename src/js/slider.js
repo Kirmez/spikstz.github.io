@@ -1,5 +1,3 @@
-
-
 let slider = document.getElementById("slider-range");
 
 noUiSlider.create(slider, {
@@ -67,8 +65,6 @@ function initializeSlider(sliderId, chosenPriceId) {
     tooltip.innerHTML = formattedValue;
   });
 }
-
-// Initialize all sliders
 
 initializeSlider("slider-range-2", "chosen-price-2");
 initializeSlider("slider-range-3", "chosen-price-3");

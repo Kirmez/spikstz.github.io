@@ -25,18 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
         `label[for="${checkbox.id}"]`
       ).textContent;
 
-      // Function to create the SVG element wrapped in a styled div
       function createSvg() {
         const svgNamespace = "http://www.w3.org/2000/svg";
         const div = document.createElement("div");
-        
+
         div.style.borderRadius = "100%";
         div.style.border = "1px solid #fff";
         div.style.display = "flex";
         div.style.alignItems = "center";
         div.style.justifyContent = "center";
-        div.style.width = "14px"; // Set width to ensure there's space for the content
-        div.style.height = "14px"; // Set height to ensure there's space for the content
+        div.style.width = "14px";
+        div.style.height = "14px";
 
         const svg = document.createElementNS(svgNamespace, "svg");
         svg.setAttribute("class", "indicators__svg");
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         svg.setAttribute("viewBox", "0 0 16 16");
         svg.setAttribute("fill", "none");
 
-        // Add SVG paths
         const path1 = document.createElementNS(svgNamespace, "path");
         path1.setAttribute(
           "d",
@@ -64,12 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         svg.appendChild(path1);
         svg.appendChild(path2);
-        div.appendChild(svg); // Append the SVG to the div
-
-        return div; // Return the div instead of the SVG
+        div.appendChild(svg);
+        return div;
       }
 
-      // Function to toggle the indicator span
       function toggleIndicatorSpan() {
         let existingSpan = container.querySelector(
           `.dynamic-indicator[data-for="${checkbox.id}"]`
@@ -97,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      // Initial state check and setup event listener
       toggleIndicatorSpan();
       checkbox.addEventListener("change", toggleIndicatorSpan);
     });
