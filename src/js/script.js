@@ -14,7 +14,9 @@ document.querySelectorAll(".indicators__arrow").forEach((arrow, index) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".indicators__indicators-btn");
-  const firstStaticSpan = container.querySelector(".indicators__indicator");
+  const firstStaticSpan = container.querySelector(
+    ".indicators__indicator:first-child"
+  );
 
   document
     .querySelectorAll('.indicators__checkbox input[type="checkbox"]')
@@ -23,9 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
         `label[for="${checkbox.id}"]`
       ).textContent;
 
-      // Function to create the specified SVG element
+      // Function to create the SVG element wrapped in a styled div
       function createSvg() {
         const svgNamespace = "http://www.w3.org/2000/svg";
+        const div = document.createElement("div");
+        
+        div.style.borderRadius = "100%";
+        div.style.border = "1px solid #fff";
+        div.style.display = "flex";
+        div.style.alignItems = "center";
+        div.style.justifyContent = "center";
+        div.style.width = "14px"; // Set width to ensure there's space for the content
+        div.style.height = "14px"; // Set height to ensure there's space for the content
+
         const svg = document.createElementNS(svgNamespace, "svg");
         svg.setAttribute("class", "indicators__svg");
         svg.setAttribute("width", "16");
@@ -33,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         svg.setAttribute("viewBox", "0 0 16 16");
         svg.setAttribute("fill", "none");
 
-        // First path for the circle
+        // Add SVG paths
         const path1 = document.createElementNS(svgNamespace, "path");
         path1.setAttribute(
           "d",
@@ -42,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
         path1.setAttribute("fill", "#58AA46");
         path1.setAttribute("fill-opacity", "0.9");
 
-        // Second path for the cross
         const path2 = document.createElementNS(svgNamespace, "path");
         path2.setAttribute(
           "d",
@@ -53,8 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         svg.appendChild(path1);
         svg.appendChild(path2);
+        div.appendChild(svg); // Append the SVG to the div
 
-        return svg;
+        return div; // Return the div instead of the SVG
       }
 
       // Function to toggle the indicator span
@@ -66,17 +78,16 @@ document.addEventListener("DOMContentLoaded", function () {
           if (!existingSpan) {
             existingSpan = document.createElement("span");
             existingSpan.className = "indicators__indicator dynamic-indicator";
-            existingSpan.setAttribute("data-for", checkbox.id); // Link the span to the checkbox
+            existingSpan.setAttribute("data-for", checkbox.id);
             existingSpan.textContent = label;
 
-            const svg = createSvg();
-            svg.addEventListener("click", function () {
+            const svgContainer = createSvg();
+            svgContainer.addEventListener("click", function () {
               container.removeChild(existingSpan);
               checkbox.checked = false;
             });
 
-            existingSpan.appendChild(svg);
-            // Ensuring new spans are added before the first static span
+            existingSpan.appendChild(svgContainer);
             container.insertBefore(existingSpan, firstStaticSpan);
           }
         } else {
