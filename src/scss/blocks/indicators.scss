@@ -6,12 +6,19 @@
 
 .indicators__container {
   display: flex;
-  align-items: center;
 
   gap: 30px;
 }
 
 .indicators__indicators-btn {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  max-width: 658px;
+}
+
+.indicators__indicator {
   display: flex;
   align-items: center;
   background-color: #2a711a;
@@ -51,6 +58,8 @@
   position: relative;
 
   margin-top: 30px;
+
+  max-width: 243px;
 }
 
 .indicators__blocks {
