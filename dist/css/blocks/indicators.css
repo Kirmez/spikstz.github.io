@@ -135,18 +135,11 @@
 .indicators__checkbox input:checked + label:before {
   background-color: #84d52c;
   border-color: #84d52c;
-}
-
-.indicators__checkbox input:checked + label:after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 8px;
-  width: 9px;
-  height: 7px;
   background-image: url("/img/check.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-size: 9px 7px;
 }
 
 .indicators__arrow {
